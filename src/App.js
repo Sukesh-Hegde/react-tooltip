@@ -12,7 +12,7 @@ function App() {
         height: "100vh",
       }}
     >
-      <Tooltip text="Thanks for hovering! I'm a tooltip">
+      <Tooltip text="Thanks for hovering! I'm a tooltip" position="right">
         <p
           style={{ textDecoration: "underline", textDecorationStyle: "dotted" }}
         >

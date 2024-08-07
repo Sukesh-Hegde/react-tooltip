@@ -1,51 +1,97 @@
 /* src/Tooltip.css */
 .tooltip-container {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .tooltip {
-    position: absolute;
-    bottom: -4%;
-    left: 235%;
-    transform: translateX(-50%);
-    padding: 21px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 4px;
-    white-space: nowrap;
+  position: absolute;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  opacity: 0.8;
+  white-space: nowrap;
+  z-index: 1;
 }
 
 .tooltip::after {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 66%;
-    transform: translateY(-130%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent black transparent transparent;
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
 }
 
+.tooltip.top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px;
+  font-size: 14px;
+}
 
+.tooltip.top::after {
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%) translateY(10%);
+  border-color: black transparent transparent transparent;
+}
 
+.tooltip.bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px;
+  font-size: 14px;
+}
+
+.tooltip.bottom::after {
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(-10%);
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip.left {
+  top: 27%;
+  right: 107%;
+  transform: translateY(-50%);
+  padding: 16px;
+  font-size: 14px;
+}
+
+.tooltip.left::after {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10%);
+  border-color: transparent transparent transparent black;
+}
+
+.tooltip.right {
+  top: 29%;
+  left: 108%;
+  transform: translateY(-50%);
+  padding: 16px;
+  font-size: 14px;
+}
+
+.tooltip.right::after {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(10%);
+  border-color: transparent black transparent transparent;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-    .tooltip {
-        position: absolute;
-        bottom: 100%; 
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 16px;
-        font-size: 14px; 
-    }
+  .tooltip {
+    font-size: 14px;
+  }
 
-    .tooltip::after {
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%) translateY(10%);
-        border-width: 5px;
-        border-style: solid;
-        border-color: black transparent transparent transparent;
-    }
+  .tooltip.top,
+  .tooltip.bottom,
+  .tooltip.left,
+  .tooltip.right {
+    padding: 16px;
+  }
 }
