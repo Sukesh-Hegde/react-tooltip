@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Tooltip.css";
 
-const Tooltip = ({ children, text, position = "top" }) => {
+const Tooltip = ({ children, text, position }) => {
   const [visible, setVisible] = useState(false);
 
   const showTooltip = () => setVisible(true);
